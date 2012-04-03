@@ -3,17 +3,16 @@
 Summary:	R Database Interface
 Name:		R-cran-%{modulename}
 Version:	0.2r5
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Databases
-Source0:	ftp://stat.ethz.ch/R-CRAN/src/contrib/%{modulename}_%{fversion}.tar.gz
+Source0:	http://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
 # Source0-md5:	84e598c205ef7c97e16feaf5d11798a3
 BuildRequires:	R >= 2.8.1
-BuildRequires:	tetex-latex-ae
-BuildRequires:	tetex-latex-bibtex
-Requires(post,postun):	R >= 2.8.1
-Requires(post,postun):	perl-base
-Requires(post,postun):	textutils
+BuildRequires:	texlive-fonts-cmsuper
+BuildRequires:	texlive-latex-ae
+BuildRequires:	texlive-latex-bibtex
+BuildRequires:	texlive-xetex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,16 +33,6 @@ R CMD INSTALL %{modulename} --library=$RPM_BUILD_ROOT%{_libdir}/R/library/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-#%post
-#(cd %{_libdir}/R/library; umask 022; cat */CONTENTS > ../doc/html/search/index.txt
-# R_HOME=%{_libdir}/R ../bin/Rcmd perl ../share/perl/build-help.pl --index)
-
-#%postun
-#if [ -f %{_libdir}/R/bin/Rcmd ];then
-#	(cd %{_libdir}/R/library; umask 022; cat */CONTENTS > ../doc/html/search/index.txt
-#	R_HOME=%{_libdir}/R ../bin/Rcmd perl ../share/perl/build-help.pl --index)
-#fi
 
 %files
 %defattr(644,root,root,755)
