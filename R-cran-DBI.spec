@@ -3,7 +3,7 @@
 Summary:	R Database Interface
 Name:		R-cran-%{modulename}
 Version:	0.2r5
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Databases
 Source0:	http://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
