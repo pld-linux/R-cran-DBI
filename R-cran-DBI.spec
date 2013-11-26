@@ -2,12 +2,12 @@
 %define		modulename	DBI
 Summary:	R Database Interface
 Name:		R-cran-%{modulename}
-Version:	0.2r5
-Release:	3
+Version:	0.2r7
+Release:	1
 License:	GPL
 Group:		Applications/Databases
 Source0:	http://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
-# Source0-md5:	84e598c205ef7c97e16feaf5d11798a3
+# Source0-md5:	2ccd3a95e7acf29dd09ff7e23878cb9b
 BuildRequires:	R >= 2.8.1
 BuildRequires:	texlive-fonts-cmsuper
 BuildRequires:	texlive-latex-ae
